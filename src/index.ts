@@ -2,10 +2,13 @@ import express, { Errback, Express, NextFunction, Request, Response } from 'expr
 import dotenv from 'dotenv';
 import cors from 'cors';
  const route = require('./routes/index')
-dotenv.config();
+
+ dotenv.config();
+ 
 
 const app: Express = express();
 const port = process.env.PORT || 4000;
+
 
 app.use(cors());
 app.use(express.json({type:"*/*"}))
@@ -22,7 +25,7 @@ app.listen(port, () => {
 app.use('/api',require('./routes/index'));
 
 
-app.get('*', (req: Request, res: Response) => {
+app.all('*', (req: Request, res: Response) => {
   res.status(404);
   res.send('Bad request ❌');
   res.end();

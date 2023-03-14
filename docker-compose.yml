@@ -1,13 +1,13 @@
 version: '3.8'
 services:
-  db:
-    image: postgres:14.1-alpine
-    restart: always
+  postgres:
+    image: postgres:latest
+    volumes:
+          - /db/:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+       
+       POSTGRES_USER : postgres
+       POSTGRES_PASSWORD : password
+    command: postgres -c max_connections=300 -c log_min_messages=LOG
     ports:
-      - '5432:5432'
-    volumes: 
-      - ./db:/var/lib/postgresql/data
-  
+      - "5432:5432"

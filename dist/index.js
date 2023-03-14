@@ -20,7 +20,7 @@ app.listen(port, () => {
     console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
 });
 app.use('/api', require('./routes/index'));
-app.get('*', (req, res) => {
+app.all('*', (req, res) => {
     res.status(404);
     res.send('Bad request ❌');
     res.end();
