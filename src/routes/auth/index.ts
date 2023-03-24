@@ -33,9 +33,6 @@ router.post('/login/email-validate/', validate(emailValidateSchema),async (req:R
          error:err,
         email:req.body.email});
    }
-   
-
-
 })
 
 

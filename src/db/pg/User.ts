@@ -17,6 +17,10 @@ export class User {
          return User.mapUserResult(res);
     }
 
+    async createUser({email,password}:{email:string,password:string}){
+      
+    }
+
 
     private static mapUserResult = (
         res: QueryResult
