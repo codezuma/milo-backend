@@ -35,6 +35,10 @@ class User {
             return User.mapUserResult(res);
         });
     }
+    createUser({ email, password }) {
+        return __awaiter(this, void 0, void 0, function* () {
+        });
+    }
 }
 exports.User = User;
 _User_pool = new WeakMap();
