@@ -1,8 +1,10 @@
+import { InsertOneResult } from "mongodb";
 import { UserDto } from "./model/UserDto";
 
  
 export interface UserDb {
   // external interface
-  findByEmail({email}:{email:string}): Promise<UserDto[]>;
+  findUser({email}:{email:string}): Promise<number>;
+  addUser({email,password}:{email:string,password:string}):Promise<InsertOneResult>;
  
 }

@@ -8,36 +8,44 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
-    if (kind === "m") throw new TypeError("Private method is not writable");
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
-    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
-};
-var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (receiver, state, kind, f) {
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
-    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
-};
-var _User_pool;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
 class User {
-    constructor(pool) {
-        _User_pool.set(this, void 0); // connection pool
-        __classPrivateFieldSet(this, _User_pool, pool, "f");
+    constructor(client) {
+        this._client = client;
     }
-    findByEmail({ email }) {
+    /*
+        async findByEmail({ email }: { email: string}): Promise<UserDto[]> {
+            const client = await this._client.connect();
+            this._client.connect().catch(err=>console.error(err));
+    
+            const  res:QueryResult = await client.query(`SELECT user_id FROM users WHERE email= '${email}'`);
+             return User.mapUserResult(res);
+        }
+     */
+    findUser({ email }) {
         return __awaiter(this, void 0, void 0, function* () {
-            const client = yield __classPrivateFieldGet(this, _User_pool, "f").connect();
-            __classPrivateFieldGet(this, _User_pool, "f").connect().catch(err => console.error(err));
-            const res = yield client.query(`SELECT user_id FROM users WHERE email= '${email}'`);
-            return User.mapUserResult(res);
+            console.log('before db ');
+            const client = yield (yield this._client.connect()).addListener('error', (err) => console.error(err));
+            console.log('after db ', client);
+            const res = yield client.db('milo').collection('users').countDocuments({ email: email });
+            yield client.close();
+            console.log('response for adding user', res);
+            return res;
+        });
+    }
+    addUser({ email, password }) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const client = yield this._client.connect();
+            console.log('email and password recieved', email, password);
+            const res = yield client.db('milo').collection('users').insertOne({ email: email, password: password });
+            yield client.close();
+            console.log('response for adding user');
+            return res;
         });
     }
 }
 exports.User = User;
-_User_pool = new WeakMap();
 User.mapUserResult = (res) => // projection
  res.rows.map((r) => ({
     userId: r.user_id,

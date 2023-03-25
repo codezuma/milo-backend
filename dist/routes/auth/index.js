@@ -15,15 +15,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const zod_1 = require("zod");
 const db_1 = require("../../db");
-const validator_1 = __importDefault(require("../../validator"));
 const router = express_1.default.Router();
 const emailValidateSchema = zod_1.z.object({
     email: zod_1.z.string().email("email not valid")
 });
-router.post('/login/email-validate/', (0, validator_1.default)(emailValidateSchema), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.get('/login/email-validate/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const users = yield db_1.user.findByEmail(req.body.email);
-        if (!(users.length === 0)) {
+        if (!req.query.email)
+            res.status(400).json(({ message: 'Email is empty' }));
+        const filter = { email: String(req.query.email) };
+        const users = yield db_1.user.findUser(filter);
+        if (!(users === 0)) {
             console.log('users', users);
             res.status(422);
             res.json({ message: 'Email already exists',

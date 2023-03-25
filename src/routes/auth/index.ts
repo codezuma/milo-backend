@@ -1,4 +1,5 @@
 import express, { Request, Response } from "express";
+import { CommandStartedEvent } from "mongodb";
 import { z } from "zod";
 import { user } from "../../db";
 import validate from "../../validator";
@@ -9,10 +10,14 @@ const emailValidateSchema = z.object({
 })
 type EmailValidateType = z.infer<typeof emailValidateSchema>;
 
-router.post('/login/email-validate/', validate(emailValidateSchema),async (req:Request<EmailValidateType >,res:Response)=>{
+router.get('/login/email-validate/',async (req:Request<EmailValidateType >,res:Response)=>{
    try{
-    const users = await user.findByEmail(req.body.email);
-    if(!(users.length===0)){
+    if(!req.query.email)
+    res.status(400).json(({message:'Email is empty'}));
+
+    const filter:{email:string} = {email:String(req.query.email)};
+    const users = await user.findUser(filter);
+    if(!(users===0)){
         console.log('users',users)
         res.status(422);
         res.json({message:'Email already exists',

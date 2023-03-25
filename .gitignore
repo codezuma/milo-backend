@@ -5,7 +5,7 @@
 .vscode/
 
 # distribution
-.dist/
+dist/
 
 #database 
 /db/
