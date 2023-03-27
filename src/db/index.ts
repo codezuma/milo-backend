@@ -18,6 +18,9 @@ pool.on('error', function (err) {
 /* const pool = new Pool({connectionString:"postgresql://postgres:password@localhost:5432/milo"});
  *//* console.log(`postgresql://${process.env.PG_USER}:${process.env.PG_PASSWORD}@${process.env.PG_HOST}:${process.env.PG_PORT}/${process.env.PG_DATABASE}`); */
  
- const client = new MongoClient(process.env.TZ);
+ const client = new MongoClient(process.env.MONGOCONNECT_URI || '');
+client.connect();
+console.info('connected');
+  client.db('milo').collection('users').find({ email: 'patidarchandresh@gmail.com' }).limit(1);
 
- export const user: UserDb = new User(pool); // strongly-typed
+ export const user: UserDb = new User(client); // strongly-typed
