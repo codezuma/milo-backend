@@ -21,13 +21,14 @@ router.get('/login/email-validate/',async (req:Request<EmailValidateType >,res:R
         console.log('users',users)
         res.status(422);
         res.json({message:'Email already exists',
-        email:req.body.email});
+        email:req.query.email});
     }
     else{
         res.status(200);
+        console.log('print email',req.body.email);
         res.json(
             {message:'Email Does not exist',
-            email:req.body.email});
+            email:req.query.email});
     }
    } 
    catch(err:any){

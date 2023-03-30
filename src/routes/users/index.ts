@@ -18,17 +18,18 @@ type createUserType = z.infer<typeof createUserSchema>;
 
 router.post('/',validate(createUserSchema),async (req:Request<createUserType >,res:Response)=>{
     try{
-     const users = await user.addUser(req.params);
-     if(!(users.acknowledged)){
+     console.log('create user hitted');
+     const users = await user.addUser(req.body);
+     if(!(users.acknowledged))      {
          console.log('users',users)
          res.status(422);
-         res.json({message:'Email already ',
+         res.json({message:'Error occured',
          email:req.body.email});
      }
      else{
-         res.status(200);
+         res.status(201);
          res.json(
-             {message:'Email Does not exist',
+             {message:'user Created',
              email:req.body.email});
      }
     } 

@@ -9,8 +9,6 @@ import cors from 'cors';
 const app: Express = express();
 const port = process.env.PORT || 4000;
 
-
-
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
@@ -19,7 +17,7 @@ app.use(express.json({type:"*/*"}))
 
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
-});
+}) ;
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Server is running👍');

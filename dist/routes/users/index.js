@@ -26,16 +26,17 @@ const createUserSchema = zod_1.z.object({
 });
 router.post('/', (0, validator_1.default)(createUserSchema), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const users = yield db_1.user.addUser(req.params);
+        console.log('create user hitted');
+        const users = yield db_1.user.addUser(req.body);
         if (!(users.acknowledged)) {
             console.log('users', users);
             res.status(422);
-            res.json({ message: 'Email already ',
+            res.json({ message: 'Error occured',
                 email: req.body.email });
         }
         else {
-            res.status(200);
-            res.json({ message: 'Email Does not exist',
+            res.status(201);
+            res.json({ message: 'user Created',
                 email: req.body.email });
         }
     }

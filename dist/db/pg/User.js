@@ -25,12 +25,9 @@ class User {
      */
     findUser({ email }) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('before db ');
-            const client = yield (yield this._client.connect()).addListener('error', (err) => console.error(err));
-            console.log('after db ', client);
+            const client = yield this._client.connect();
             const res = yield client.db('milo').collection('users').countDocuments({ email: email });
             yield client.close();
-            console.log('response for adding user', res);
             return res;
         });
     }

@@ -19,12 +19,9 @@ export class User implements UserDb {
       }
    */
   async findUser({ email }: { email: string }) {
-    console.log('before db ');
-    const client = await (await this._client.connect()).addListener('error',(err:Error)=>console.error(err));
-    console.log('after db ',client);
+    const client = await this._client.connect();
     const res: number = await client.db('milo').collection('users').countDocuments({ email: email });
     await client.close();
-    console.log('response for adding user', res);
     return res;
   }
 
