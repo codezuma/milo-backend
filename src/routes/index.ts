@@ -1,17 +1,19 @@
+import user from "@models/user";
+import { DEFAULT_ENCODING } from "crypto";
 import express from "express";
-import  { Errback, Express, NextFunction, Request, Response } from 'express';
+import { Errback, Express, NextFunction, Request, Response } from "express";
 
+import authRouter from "./auth";
+import usersRouter from "./user";
 const router = express.Router();
 
-
-router.get('/',(req: Request, res: Response)=>{
-    res.send('api working 🚀');
-})
+router.get("/", (req: Request, res: Response) => {
+  res.send("api working 🚀");
+});
 
 //setting all routes for app
 
-router.use('/users/',require("./users/"));
-router.use('/auth/',require("./auth/"));  
+router.use("/users", usersRouter);
+router.use("/auth", authRouter);
 
-module.exports = router;
-  
+export default router;

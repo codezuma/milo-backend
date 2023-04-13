@@ -2,30 +2,49 @@
   "name": "milo-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "./index.js",
+  "main": "./app.js",
   "scripts": {
     "build": "npx tsc",
-    "start": "node dist/index.js",
-    "dev": "concurrently \"yarn tsc --watch\" \"nodemon -q dist/index.js\""
+    "start": "node dist/app.js",
+    "dev": "concurrently \"yarn tsc --watch\" \"nodemon -q dist/app.js\""
   },
   "keywords": [],
   "author": "",
+  "_moduleAliases": {
+    "@config": "dist/config",
+    "@interfaces": "dist/interfaces",
+    "@jwt": "dist/jwt",
+    "@loaders": "dist/loaders",
+    "@models": "dist/models",
+    "@routes": "dist/routes"
+  },
   "license": "ISC",
   "devDependencies": {
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
+    "@types/mongoose": "^5.11.97",
     "@types/node": "^18.15.0",
-    "@types/pg": "^8.6.6",
+    "@typescript-eslint/parser": "^4.2.0",
     "concurrently": "^7.6.0",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^26.4.2",
+    "module-alias": "^2.2.2",
     "nodemon": "^2.0.21",
+    "prettier": "^2.8.7",
+    "ts-node": "^9.0.0",
+    "tsconfig-paths": "^3.11.0",
+    "tslint": "^5.20.1",
     "typescript": "^4.9.5"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "google-auth-library": "^8.7.0",
     "mongodb": "^5.1.0",
-    "pg": "^8.10.0",
+    "mongoose": "^7.0.3",
     "zod": "^3.21.4"
   }
 }
