@@ -1,6 +1,7 @@
 import user from "@models/user";
 import express, { Request, Response } from "express";
 import { z } from "zod";
+import userController from "../controllers/user";
 const router = express.Router();
 
 router.get("/", (req: Request, res: Response) => {
@@ -31,32 +32,7 @@ router.post("/", validate(createUserSchema), async (req: Request<createUserType>
   }
 });
  */
-  router.get("/e",(req,res)=>{
-    res.json({status:"working"}).end();
-  })
 
-  router.get("/:email", async (req: Request, res: Response) => {
-    
-    const email = String(req.params.id);
-
-    try {
-      if (!email) res.status(400).json({ message: "Email is empty" });
-  
-      const users = await user.exists({email:email});
-  
-      if (!(users === null)) {  
-        console.log("users", users);
-        res.status(422);
-        res.json({ message: "Email already exists", email: req.body.email });
-      } else {
-        res.status(200);
-        res.json({ message: "Email Does not exist", email: req.body.email });
-      }
-    } catch (err: any) {
-      console.error(err);
-      res.status(500);
-      res.json({ message: "Server Error", error: err, email: req.body.email });
-    }
-  });
+router.get("/:email",userController.userExists);
   
 export default router;
