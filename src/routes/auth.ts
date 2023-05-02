@@ -1,7 +1,5 @@
-import { OAuth2Client } from "google-auth-library";
-import express, { Request, Response } from "express";
-import { z } from "zod";
-import user from "@models/user";
+import express from "express";
+
 const router = express.Router();
 
 router.get("/",(req,res)=>{

@@ -1,9 +1,7 @@
 import user from "@models/user";
 import { createUserType } from "@routes/user";
-import { create } from "domain";
 import { Request,Response } from "express";
-import { z } from "zod";
-import validate from "../validator";
+
 
 const userExists = async (req: Request, res: Response) => {
     const email = String(req.params.id);
@@ -30,13 +28,12 @@ const userExists = async (req: Request, res: Response) => {
 const createUser =  async (req: Request<createUserType>, res: Response) => {
   try {
     const users = await user.create(req.params);
-    if (!users.acknowledged) {
-      console.log("users", users);
-      res.status(422);
-      res.json({ message: "Email already ", email: req.body.email });
-    } else {
+    if (users) {
       res.status(200);
-      res.json({ message: "Email Does not exist", email: req.body.email });
+      res.json({ message: "User created ", email: req.body.email });
+    } else {
+      res.status(501);
+      res.json({ message: "User not created", email: req.body.email });
     }
   } catch (err: any) {
     console.error(err);

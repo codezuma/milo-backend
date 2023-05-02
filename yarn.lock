@@ -804,6 +804,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/connect-mongo@npm:^3.1.3":
+  version: 3.1.3
+  resolution: "@types/connect-mongo@npm:3.1.3"
+  dependencies:
+    connect-mongo: "*"
+  checksum: 9e88724b42ae608afd74e9ca089572f32a8eefa3dcb1694d932f435a79d1494307bbe0cc348867e56d6b4b798763c4bedf30f240370cb1fcff7d6033b7eed015
+  languageName: node
+  linkType: hard
+
 "@types/connect@npm:*":
   version: 3.4.35
   resolution: "@types/connect@npm:3.4.35"
@@ -833,7 +842,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/express@npm:^4.17.17":
+"@types/express-session@npm:^1.17.7":
+  version: 1.17.7
+  resolution: "@types/express-session@npm:1.17.7"
+  dependencies:
+    "@types/express": "*"
+  checksum: 4764eafaf4e26842e891e83fa9fee30b92cc3724d91987aac3a658322f9a69fb544dae24fc3aba6e15fe9575ed862760ebecd7ff97a947afb695284967434a65
+  languageName: node
+  linkType: hard
+
+"@types/express@npm:*, @types/express@npm:^4.17.17":
   version: 4.17.17
   resolution: "@types/express@npm:4.17.17"
   dependencies:
@@ -890,6 +908,15 @@ __metadata:
   version: 3.0.1
   resolution: "@types/mime@npm:3.0.1"
   checksum: 4040fac73fd0cea2460e29b348c1a6173da747f3a87da0dbce80dd7a9355a3d0e51d6d9a401654f3e5550620e3718b5a899b2ec1debf18424e298a2c605346e7
+  languageName: node
+  linkType: hard
+
+"@types/mongodb@npm:^4.0.7":
+  version: 4.0.7
+  resolution: "@types/mongodb@npm:4.0.7"
+  dependencies:
+    mongodb: "*"
+  checksum: 10ebdfed5beaeb9354adcaded3ff31a0597eec96d665155bf029fdf81384534cc054ffd4f3a431911e55055cea8dcea6233b2265d6d90f45fe233fd59a31bd56
   languageName: node
   linkType: hard
 
@@ -1260,6 +1287,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"asn1.js@npm:^5.4.1":
+  version: 5.4.1
+  resolution: "asn1.js@npm:5.4.1"
+  dependencies:
+    bn.js: ^4.0.0
+    inherits: ^2.0.1
+    minimalistic-assert: ^1.0.0
+    safer-buffer: ^2.1.0
+  checksum: 3786a101ac6f304bd4e9a7df79549a7561950a13d4bcaec0c7790d44c80d147c1a94ba3d4e663673406064642a40b23fcd6c82a9952468e386c1a1376d747f9a
+  languageName: node
+  linkType: hard
+
 "assign-symbols@npm:^1.0.0":
   version: 1.0.0
   resolution: "assign-symbols@npm:1.0.0"
@@ -1389,6 +1428,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bn.js@npm:^4.0.0":
+  version: 4.12.0
+  resolution: "bn.js@npm:4.12.0"
+  checksum: 39afb4f15f4ea537b55eaf1446c896af28ac948fdcf47171961475724d1bb65118cca49fa6e3d67706e4790955ec0e74de584e45c8f1ef89f46c812bee5b5a12
+  languageName: node
+  linkType: hard
+
 "body-parser@npm:1.20.1":
   version: 1.20.1
   resolution: "body-parser@npm:1.20.1"
@@ -1489,6 +1535,13 @@ __metadata:
   version: 5.1.0
   resolution: "bson@npm:5.1.0"
   checksum: 5e1c6235b7bc5c788116f077a076bb2fa227e8dc5ad472277c5931c0b82b747edb08c5eb4f511823c895d35c707917f6a16b8f3207104b8559dc83524706cc4a
+  languageName: node
+  linkType: hard
+
+"bson@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "bson@npm:5.2.0"
+  checksum: 1297f8776a05fe3c03b5a1c73210389bc3e596ee6f1e772b76c021fff5537d0c91e523462ba196a8a839246613a87cffbd6486d387a849c7de7cde64d1af7812
   languageName: node
   linkType: hard
 
@@ -1813,6 +1866,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"connect-mongo@npm:*, connect-mongo@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "connect-mongo@npm:5.0.0"
+  dependencies:
+    debug: ^4.3.1
+    kruptein: ^3.0.0
+  peerDependencies:
+    express-session: ^1.17.1
+    mongodb: ^5.1.0
+  checksum: 3f81eca3efbdb00d1d35d73551cf2405ad1cae5b9580566880007d7bfcddeb1ad9b0e8a6850c247534bf00bf93d1941ac610aa0a2df6dea4d475195c2c402f4e
+  languageName: node
+  linkType: hard
+
 "console-control-strings@npm:^1.1.0":
   version: 1.1.0
   resolution: "console-control-strings@npm:1.1.0"
@@ -1847,6 +1913,13 @@ __metadata:
   version: 1.0.6
   resolution: "cookie-signature@npm:1.0.6"
   checksum: f4e1b0a98a27a0e6e66fd7ea4e4e9d8e038f624058371bf4499cfcd8f3980be9a121486995202ba3fca74fbed93a407d6d54d43a43f96fd28d0bd7a06761591a
+  languageName: node
+  linkType: hard
+
+"cookie@npm:0.4.2":
+  version: 0.4.2
+  resolution: "cookie@npm:0.4.2"
+  checksum: a00833c998bedf8e787b4c342defe5fa419abd96b32f4464f718b91022586b8f1bafbddd499288e75c037642493c83083da426c6a9080d309e3bd90fd11baa9b
   languageName: node
   linkType: hard
 
@@ -2046,7 +2119,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"depd@npm:2.0.0, depd@npm:^2.0.0":
+"depd@npm:2.0.0, depd@npm:^2.0.0, depd@npm:~2.0.0":
   version: 2.0.0
   resolution: "depd@npm:2.0.0"
   checksum: abbe19c768c97ee2eed6282d8ce3031126662252c58d711f646921c9623f9052e3e1906443066beec1095832f534e57c523b7333f8e7e0d93051ab6baef5ab3a
@@ -2332,6 +2405,22 @@ __metadata:
     jest-message-util: ^26.6.2
     jest-regex-util: ^26.0.0
   checksum: 79a9b888c5c6d37d11f2cb76def6cf1dc8ff098d38662ee20c9f2ee0da67e9a93435f2327854b2e7554732153870621843e7f83e8cefb1250447ee2bc39883a4
+  languageName: node
+  linkType: hard
+
+"express-session@npm:^1.17.3":
+  version: 1.17.3
+  resolution: "express-session@npm:1.17.3"
+  dependencies:
+    cookie: 0.4.2
+    cookie-signature: 1.0.6
+    debug: 2.6.9
+    depd: ~2.0.0
+    on-headers: ~1.0.2
+    parseurl: ~1.3.3
+    safe-buffer: 5.2.1
+    uid-safe: ~2.1.5
+  checksum: 1021a793433cbc6a1b32c803fcb2daa1e03a8f50dd907e8745ae57994370315a5cfde5b6ef7b062d9a9a0754ff268844bda211c08240b3a0e01014dcf1073ec5
   languageName: node
   linkType: hard
 
@@ -2976,7 +3065,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inherits@npm:2, inherits@npm:2.0.4, inherits@npm:^2.0.3":
+"inherits@npm:2, inherits@npm:2.0.4, inherits@npm:^2.0.1, inherits@npm:^2.0.3":
   version: 2.0.4
   resolution: "inherits@npm:2.0.4"
   checksum: 4a48a733847879d6cf6691860a6b1e3f0f4754176e4d71494c41f3475553768b10f84b5ce1d40fbd0e34e6bfbb864ee35858ad4dd2cf31e02fc4a154b724d7f1
@@ -3911,6 +4000,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"kruptein@npm:^3.0.0":
+  version: 3.0.6
+  resolution: "kruptein@npm:3.0.6"
+  dependencies:
+    asn1.js: ^5.4.1
+  checksum: 65a31350fdb7b131aad717f4461d419c1ef52686b4497d9160c8d8e89a608f0966ffab7ff68ed6c8fa32dacfcdb7b77d8b5ea614a0d55151311156b09c1b4e30
+  languageName: node
+  linkType: hard
+
 "leven@npm:^3.1.0":
   version: 3.1.0
   resolution: "leven@npm:3.1.0"
@@ -4111,18 +4209,24 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "milo-backend@workspace:."
   dependencies:
+    "@types/connect-mongo": ^3.1.3
     "@types/cors": ^2.8.13
     "@types/express": ^4.17.17
+    "@types/express-session": ^1.17.7
+    "@types/mongodb": ^4.0.7
     "@types/mongoose": ^5.11.97
     "@types/node": ^18.15.0
     "@typescript-eslint/parser": ^4.2.0
     concurrently: ^7.6.0
+    connect-mongo: ^5.0.0
     cors: ^2.8.5
     dotenv: ^16.0.3
     express: ^4.18.2
+    express-session: ^1.17.3
     jest: ^26.4.2
     module-alias: ^2.2.2
-    mongoose: ^7.0.3
+    mongodb: ^5.3.0
+    mongoose: ^7.1.0
     nodemon: ^2.0.21
     tsconfig-paths: ^3.11.0
     typescript: ^4.9.5
@@ -4159,6 +4263,13 @@ __metadata:
   version: 2.1.0
   resolution: "mimic-fn@npm:2.1.0"
   checksum: d2421a3444848ce7f84bd49115ddacff29c15745db73f54041edc906c14b131a38d05298dae3081667627a59b2eb1ca4b436ff2e1b80f69679522410418b478a
+  languageName: node
+  linkType: hard
+
+"minimalistic-assert@npm:^1.0.0":
+  version: 1.0.1
+  resolution: "minimalistic-assert@npm:1.0.1"
+  checksum: cc7974a9268fbf130fb055aff76700d7e2d8be5f761fb5c60318d0ed010d839ab3661a533ad29a5d37653133385204c503bfac995aaa4236f4e847461ea32ba7
   languageName: node
   linkType: hard
 
@@ -4300,6 +4411,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mongodb@npm:*, mongodb@npm:5.3.0, mongodb@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "mongodb@npm:5.3.0"
+  dependencies:
+    bson: ^5.2.0
+    mongodb-connection-string-url: ^2.6.0
+    saslprep: ^1.0.3
+    socks: ^2.7.1
+  peerDependencies:
+    "@aws-sdk/credential-providers": ^3.201.0
+    mongodb-client-encryption: ">=2.3.0 <3"
+    snappy: ^7.2.2
+  dependenciesMeta:
+    saslprep:
+      optional: true
+  peerDependenciesMeta:
+    "@aws-sdk/credential-providers":
+      optional: true
+    mongodb-client-encryption:
+      optional: true
+    snappy:
+      optional: true
+  checksum: da86069555f3f700a0ef338a4676de2254ef64f7700427c0e23ccd5bd9ca9cd5f08651f2eb5083edfdc1e7eed1b40c60041b16e6d4851f353a26d9469d274299
+  languageName: node
+  linkType: hard
+
 "mongodb@npm:5.1.0":
   version: 5.1.0
   resolution: "mongodb@npm:5.1.0"
@@ -4326,7 +4463,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongoose@npm:*, mongoose@npm:^7.0.3":
+"mongoose@npm:*":
   version: 7.0.3
   resolution: "mongoose@npm:7.0.3"
   dependencies:
@@ -4338,6 +4475,21 @@ __metadata:
     ms: 2.1.3
     sift: 16.0.1
   checksum: 0ced556b0b572aed1b866a4eff05d1e7371e0696d264f15818140f5c65368d44fb9cb4e60ab54ef209f39e91d803c74315f09d931967234561005c074050136e
+  languageName: node
+  linkType: hard
+
+"mongoose@npm:^7.1.0":
+  version: 7.1.0
+  resolution: "mongoose@npm:7.1.0"
+  dependencies:
+    bson: ^5.2.0
+    kareem: 2.5.1
+    mongodb: 5.3.0
+    mpath: 0.9.0
+    mquery: 5.0.0
+    ms: 2.1.3
+    sift: 16.0.1
+  checksum: e24aa2d7616cb1f2e53ce21dcbafa7b667173a17bd159be01164a6d63fc81b4bb3a086107a913e2ca1480a593f6ee3d9905ed5b05431fc65dbb4e73c028090b2
   languageName: node
   linkType: hard
 
@@ -4622,6 +4774,13 @@ __metadata:
   dependencies:
     ee-first: 1.1.1
   checksum: d20929a25e7f0bb62f937a425b5edeb4e4cde0540d77ba146ec9357f00b0d497cdb3b9b05b9c8e46222407d1548d08166bff69cc56dfa55ba0e4469228920ff0
+  languageName: node
+  linkType: hard
+
+"on-headers@npm:~1.0.2":
+  version: 1.0.2
+  resolution: "on-headers@npm:1.0.2"
+  checksum: 2bf13467215d1e540a62a75021e8b318a6cfc5d4fc53af8e8f84ad98dbcea02d506c6d24180cd62e1d769c44721ba542f3154effc1f7579a8288c9f7873ed8e5
   languageName: node
   linkType: hard
 
@@ -4934,6 +5093,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"random-bytes@npm:~1.0.0":
+  version: 1.0.0
+  resolution: "random-bytes@npm:1.0.0"
+  checksum: 09faa256394aa2ca9754aa57e92a27c452c3e97ffb266e98bebb517332e9df7168fea393159f88d884febce949ba8bec8ddb02f03342da6c6023ecc7b155e0ae
+  languageName: node
+  linkType: hard
+
 "range-parser@npm:~1.2.1":
   version: 1.2.1
   resolution: "range-parser@npm:1.2.1"
@@ -5177,7 +5343,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"safer-buffer@npm:>= 2.1.2 < 3, safer-buffer@npm:>= 2.1.2 < 3.0.0":
+"safer-buffer@npm:>= 2.1.2 < 3, safer-buffer@npm:>= 2.1.2 < 3.0.0, safer-buffer@npm:^2.1.0":
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
   checksum: cab8f25ae6f1434abee8d80023d7e72b598cf1327164ddab31003c51215526801e40b66c5e65d658a0af1e9d6478cadcb4c745f4bd6751f97d8644786c0978b0
@@ -6009,6 +6175,15 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: ab417a2f398380c90a6cf5a5f74badd17866adf57f1165617d6a551f059c3ba0a3e4da0d147b3ac5681db9ac76a303c5876394b13b3de75fdd5b1eaa06181c9d
+  languageName: node
+  linkType: hard
+
+"uid-safe@npm:~2.1.5":
+  version: 2.1.5
+  resolution: "uid-safe@npm:2.1.5"
+  dependencies:
+    random-bytes: ~1.0.0
+  checksum: 07536043da9a026f4a2bc397543d0ace7587449afa1d9d2c4fd3ce76af8a5263a678788bcc429dff499ef29d45843cd5ee9d05434450fcfc19cc661229f703d1
   languageName: node
   linkType: hard
 

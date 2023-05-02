@@ -27,6 +27,8 @@ export default {
   jwtSecret: process.env.JWT_SECRET,
   jwtAlgorithm: process.env.JWT_ALGO,
 
+  sessionStorageSecret : process.env.SESSION_SECRET,
+
   /**
    * API configs
    */
