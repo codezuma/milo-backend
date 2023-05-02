@@ -10,3 +10,8 @@ dist/
 #database 
 /db/
 data/
+
+
+.yarn/cache
+.yarn/local
+.pnp.*
