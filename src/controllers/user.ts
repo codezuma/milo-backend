@@ -1,10 +1,9 @@
 import user from "@models/user";
-import { createUserType } from "@routes/user";
 import { Request,Response } from "express";
 
 
 const userExists = async (req: Request, res: Response) => {
-    const email = String(req.params.id);
+    const email = String(req.params.email);
 
     try {
       if (!email) res.status(400).json({ message: "Email is empty" });
@@ -13,36 +12,18 @@ const userExists = async (req: Request, res: Response) => {
       if (!(users === null)) {  
         console.log("users", users);
         res.status(422);
-        res.json({ message: "Email already exists", email: req.body.email });
+        res.json({ message: "Email already exists", email: email });
       } else {
         res.status(200);
-        res.json({ message: "Email Does not exist", email: req.body.email });
+        res.json({ message: "Email Does not exist", email: email });
       }
     } catch (err: any) {
       console.error(err);
       res.status(500);
-      res.json({ message: "Server Error", error: err, email: req.body.email });
+      res.json({ message: "Server Error", error: err, email: email });
     }
-};
-
-const createUser =  async (req: Request<createUserType>, res: Response) => {
-  try {
-    const users = await user.create(req.params);
-    if (users) {
-      res.status(200);
-      res.json({ message: "User created ", email: req.body.email });
-    } else {
-      res.status(501);
-      res.json({ message: "User not created", email: req.body.email });
-    }
-  } catch (err: any) {
-    console.error(err);
-    res.status(500);
-    res.json({ message: "Server Error", error: err, email: req.body.email });
-  }
 };
 const userController = {
   "userExists": userExists,
-  "createUser":createUser
 };
 export default userController;

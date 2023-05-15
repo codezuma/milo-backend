@@ -1,15 +1,17 @@
+import moongoseDB from "@loaders/mongoose";
 import mongoose from "mongoose";
 
-const User = new mongoose.Schema(
+const userSchema = new mongoose.Schema<User>(
   {
     name: {
       type: String,
-      required: [true, "Please enter a full name"],
+      default:'user',
       index: true,
     },
 
     email: {
       type: String,
+      required: [true, "Please enter a Email"],
       lowercase: true,
       unique: true,
       index: true,
@@ -25,4 +27,17 @@ const User = new mongoose.Schema(
   { timestamps: true },
 );
 
-export default mongoose.model<mongoose.Document>("User", User);
+
+const User = mongoose.model<mongoose.Document&User>("User", userSchema);
+
+
+export default User;
+
+
+type User = {
+  name:string,
+  password:string,
+  salt:string,
+  email:string,
+  role:'user',
+}

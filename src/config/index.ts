@@ -21,12 +21,6 @@ export default {
    */
   databaseURL: process.env.MONGODB_URI,
 
-  /**
-   * Your secret sauce
-   */
-  jwtSecret: process.env.JWT_SECRET,
-  jwtAlgorithm: process.env.JWT_ALGO,
-
   sessionStorageSecret : process.env.SESSION_SECRET,
 
   /**

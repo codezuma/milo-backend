@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npx tsc",
     "start": "node dist/app.js",
-    "dev": "concurrently \"yarn tsc --watch\" \"nodemon -q dist/app.js\""
+    "dev": "concurrently \"yarn tsc --watch\" \"nodemon --delay 300ms -q dist/app.js\""
   },
   "keywords": [],
   "author": "",
@@ -16,7 +16,8 @@
     "@jwt": "dist/jwt",
     "@loaders": "dist/loaders",
     "@models": "dist/models",
-    "@routes": "dist/routes"
+    "@routes": "dist/routes",
+    "@lib": "dist/lib"
   },
   "license": "ISC",
   "devDependencies": {
@@ -27,6 +28,8 @@
     "@types/mongodb": "^4.0.7",
     "@types/mongoose": "^5.11.97",
     "@types/node": "^18.15.0",
+    "@types/passport": "^1.0.12",
+    "@types/passport-local": "^1.0.35",
     "@typescript-eslint/parser": "^4.2.0",
     "concurrently": "^7.6.0",
     "jest": "^26.4.2",
@@ -38,11 +41,14 @@
   "dependencies": {
     "connect-mongo": "^5.0.0",
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "mongodb": "^5.3.0",
     "mongoose": "^7.1.0",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
     "zod": "^3.21.4"
   }
 }

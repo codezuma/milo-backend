@@ -3,6 +3,7 @@ import config from "@config/index";
 import expressLoader from "./express";
 import mongooseLoader from './mongoose';
 import session from "./session";
+import passportLoader from "./passport";
 
 export default async  ({ expressApp }: { expressApp: express.Application }) => {
     const mongoConnection = await mongooseLoader();
@@ -13,5 +14,8 @@ export default async  ({ expressApp }: { expressApp: express.Application }) => {
  
     expressLoader({ app: expressApp });
     console.log('✌️ Express loaded');
+
+    passportLoader({ app: expressApp });
+    console.log('✌️ passport loaded');
   };
   

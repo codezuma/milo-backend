@@ -2,6 +2,7 @@
 # dependencies
 
 .yarn/
+node_modules/*
 .vscode/
 
 # distribution

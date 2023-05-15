@@ -1,5 +1,4 @@
 import user from "@models/user";
-import { DEFAULT_ENCODING } from "crypto";
 import express from "express";
 import { Errback, Express, NextFunction, Request, Response } from "express";
 
@@ -14,6 +13,7 @@ router.get("/", (req: Request, res: Response) => {
 //setting all routes for app
 
 router.use("/users", usersRouter);
+
 router.use("/auth", authRouter);
 
 export default router;

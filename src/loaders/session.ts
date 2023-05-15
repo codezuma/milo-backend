@@ -11,7 +11,7 @@ export default (app: Application, connection: Connection): void => {
     secret: config.sessionStorageSecret || "",
     resave: false,
     store: MongoStore.create({
-        dbName: 'myapp',
+        dbName: 'buzzlytics',
         collectionName: 'sessions',
         client:connection.getClient()
       }),

@@ -1,14 +1,1 @@
-{
-	"folders": [
-		{
-			"path": "../../../buzzlytics"
-		},
-		{
-			"path": "../.."
-		}
-	],
-	"settings": {
-		"typescript.tsdk": ".yarn/sdks/typescript/lib",
-		"typescript.enablePromptUseWorkspaceTsdk": true
-	}
-}
+yarn d

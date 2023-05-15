@@ -32,10 +32,11 @@
     "paths": {
       "@config/*": ["./src/config/*"],
       "@interfaces/*":[ "./src/interfaces/*"],
-      "@jwt/*": ["./src//jwt/*"],
+      "@passport/*": ["./src/passport/*"],
       "@loaders/*": ["./src/loaders/*"],
       "@models/*": ["./src/models/*"],
       "@routes/*": ["./src/routes/*"],
+      "@lib/*": ["./src/lib/*"],
     } /* Specify a set of entries that re-map imports to additional lookup locations. */,
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
