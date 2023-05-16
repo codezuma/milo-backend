@@ -1,5 +1,4 @@
-import express, { Errback, Express, NextFunction, Request, Response } from "express";
-import dotenv from "dotenv";
+import express from "express";
 import cors from "cors";
 import config from "@config/index";
 import router from "@routes/index";

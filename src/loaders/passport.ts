@@ -30,12 +30,18 @@ const passportLoader = ({ app }: { app: express.Application }) => {
 
   passport.serializeUser((user, done) => {
     done(null, user);
-  });             
+  });               
 
-  passport.deserializeUser((userId, done) => {
+  passport.deserializeUser(async (userId, done) => {
     try {
-      const user = User.findById(userId);
-      done(null, user);
+      const user = await User.findById(userId);
+      const userInformation  = {
+        username:user?.name,
+        id:user?.id,
+        email:user?.email,
+        role:user?.role
+      }
+      done(null,userInformation);
     } catch (err) {
       done(err, null);
     }

@@ -17,7 +17,7 @@ export const validPassword = (password: string, hash: string, salt: string) => {
   return hash === hashVerify;
 };
 
-export const isAuth = (req:Request,res:Response,next:NextFunction)=>{
+export const isUserAuthenticated = (req:Request,res:Response,next:NextFunction)=>{
   if(req.isAuthenticated())
   next();
   else{

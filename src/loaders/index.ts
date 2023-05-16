@@ -11,11 +11,11 @@ export default async  ({ expressApp }: { expressApp: express.Application }) => {
     
     session(expressApp,mongoConnection);
     console.log('✌️ Session Storage is up');
+    
+    passportLoader({ app: expressApp });
+    console.log('✌️ passport loaded');
  
     expressLoader({ app: expressApp });
     console.log('✌️ Express loaded');
-
-    passportLoader({ app: expressApp });
-    console.log('✌️ passport loaded');
   };
   
